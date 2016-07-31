@@ -12,11 +12,9 @@ function isAvailable()
 							});
 					$('td').css("background-color","green");
 					for (var i=0;i<booked.length;i++)
-					{
-						if(booked[i]<64)
-						{
-							document.getElementById(booked[i]).style.backgroundColor="red";
-						}
+					{			
+						document.getElementById(booked[i]).style.backgroundColor="red";
+						
 					}		
 				},
 			});
@@ -84,6 +82,16 @@ function createSeats()
 		}
 		$('#quadrant4').append("</tr>");
 	}
+	for(var i=0;i<3;i++)
+	{
+		$('#quadrant5').append("<tr>");
+		for(var j=0;j<12;j++)
+		{
+		$('#quadrant5').append("<td id='"+k+"'>"+(k)+"</td>");
+		k++;
+		}
+		$('#quadrant5').append("</tr>");
+	}
 	$("#quadrant4").unbind().click(function() {
 							alert("You dont have permission to book this seat");
 							});
@@ -93,7 +101,9 @@ function createSeats()
 	$("#quadrant1").unbind().click(function() {
 							alert("You dont have permission to book this seat");
 							});
-		
+	$("#quadrant5").unbind().click(function() {
+							alert("You dont have permission to book this seat");
+							});
 isAvailable();
 	}
 window.onload=function()
